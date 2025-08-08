@@ -1,0 +1,10 @@
+/node_modules
+# /css/*.css
+/css/*.map
+# /js/*.js
+/js/*.map
+/public
+/.vscode
+/.idea
+.DS_Store
+.env

@@ -1,0 +1,90 @@
+@import 'tailwindcss';
+@import './theme.css';
+@import './utilities.css';
+@import './custom.css' layer(utilities);
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
+
+
+@layer components {
+  .rane-container {
+    @apply w-full lg:max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-0;
+  }
+
+  .rane-button {
+    @apply inline-block bg-gradient-to-l from-primary to-secondary text-white text-center !no-underline font-semibold py-2 px-10 rounded-2xl shadow-lg shadow-secondary/35;
+    @apply hover:from-secondary hover:to-primary transition duration-300 ease-in-out;
+    &.rane-button--hero {
+        @apply py-2 text-lg;
+    }
+  }
+
+  .rane-testimonials {
+    .slick-track {
+        @apply !flex items-stretch gap-4 cursor-grab;
+        .slick-slide {
+            @apply !h-full !flex flex-col justify-between gap-4;
+        }
+    }
+  }
+
+  .rane-heading {
+    @apply text-gray-brand text-2xl sm:text-2xl lg:text-3xl font-bold mb-6;
+    
+    &.rane-heading--hero {
+        @apply text-2xl sm:text-3xl lg:text-4xl xl:text-[40px];
+    }
+    
+    &.rane-heading--section {
+        @apply text-2xl sm:text-3xl lg:text-4xl xl:text-[40px];
+    }
+    
+    &.rane-heading--widget {
+        @apply text-lg sm:text-xl lg:text-2xl text-primary font-semibold mb-2;
+    }
+  }
+
+  .rane-regular {
+    @apply space-y-2;
+    ul, & ul { 
+        @apply space-y-2;
+        li {
+            @apply relative;
+            padding-left: 1.5rem;
+        }
+    
+        li::before {
+            @apply absolute left-0 top-[0.5rem] bg-cover bg-no-repeat bg-[url('../../images/check.svg')] bg-[length:1rem_1rem] text-primary;
+            content: '';
+            width: 1rem;
+            height: 1rem;
+        }
+    }
+    h2 {
+      @apply text-2xl sm:text-3xl lg:text-4xl font-black text-primary py-4;
+    }
+
+    h3 {
+      @apply text-lg sm:text-xl lg:text-2xl text-primary font-semibold py-2;
+    }
+    p {
+      @apply py-1;
+    }
+  }
+}

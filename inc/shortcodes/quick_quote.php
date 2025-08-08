@@ -1,0 +1,1 @@
+<?php echo FrmFormsController::get_form_shortcode( array( 'id' => 3 ) ); ?>

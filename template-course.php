@@ -1,9 +1,9 @@
 <?php
 /**
- * Template Name: Product Page
+ * Template Name: Course Page
  * Template Post Type: page
  *
- * This template is used for the Product page.
+ * This template is used for the Course page.
  */
 
 get_header();

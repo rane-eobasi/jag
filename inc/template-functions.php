@@ -5,6 +5,9 @@
  * @package rane_digital
  */
 
+// Include the custom post type and taxonomy functions
+require_once get_template_directory() . '/inc/jag-course-functions.php';
+
 /**
  * Adds custom classes to the array of body classes.
  *
